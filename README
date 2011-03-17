@@ -23,3 +23,7 @@ If the input file name is omitted, standard input will be used. If the output
 file name is omitted, standard output will be used. To compile the program,
 just type gcc eliminate.c -o eliminate, or whatever you want to call the 
 executable.
+
+- inserttext.pl
+A perl script that inserts the text of one file into a certain line of another 
+file.
