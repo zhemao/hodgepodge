@@ -1,3 +1,7 @@
+'''
+Redis-backed web.py session store. Dependencies are web.py and redis-py
+'''
+
 from web.session import Store
 import time
 
