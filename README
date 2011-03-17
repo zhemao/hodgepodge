@@ -29,3 +29,9 @@ executable.
 - inserttext.pl
 A perl script that inserts the text of one file into a certain line of another 
 file.
+
+These scripts are made available under the MIT License 
+(http://www.opensource.org/licenses/mit-license.php)
+
+<copyright holder> Zhehao Mao
+<year> 2011
