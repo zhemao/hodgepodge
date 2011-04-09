@@ -43,6 +43,12 @@ line. `./sendgmail.py -m "message"` sends the text in the final argument.
 `./sendgmail.py -f "filename"` sends the text in the file specified by the last
 argument.
 
+## asciionly.py
+
+A python script that removes non-ascii characters from a text file in 
+preparation for processing by programs written in languages without built-in
+unicode support.
+
 These scripts are made available under the MIT License 
 (http://www.opensource.org/licenses/mit-license.php)
 
