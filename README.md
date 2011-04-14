@@ -49,6 +49,11 @@ A python script that removes non-ascii characters from a text file in
 preparation for processing by programs written in languages without built-in
 unicode support.
 
+## importer.py
+
+Convenient methods for meta-programming around importing modules and objects
+in python
+
 These scripts are made available under the MIT License 
 (http://www.opensource.org/licenses/mit-license.php)
 
