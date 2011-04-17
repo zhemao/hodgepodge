@@ -23,11 +23,11 @@ redis-py (https://github.com/andymccurdy/redis-py)
 
 ## eliminate
 
-A simple C program that reads from a file or standard input, eliminates 
-whitespace characters, and prints to the same or another file. 
+A simple C program that reads in text, eliminates the whitespace, and then
+writes it out. 
 The usage is: eliminate [inputfilename] [outputfilename].
 If inputfilename is not given, the program will read from standard input.
-If the outputfilename is not given, the program will write to standard output.
+If outputfilename is not given, the program will write to standard output.
 `make eliminate` to compile
 
 ## inserttext.pl
@@ -45,7 +45,8 @@ argument.
 ## sanitize
 
 A C program that removes non-ascii characters and non-printing characters 
-from a text file. Command-line usage is the same as for eliminate.
+from a text file. Command-line usage is the same as for eliminate. 
+`make sanitize` to compile
 
 ## importer.py
 
