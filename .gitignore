@@ -1,0 +1,5 @@
+*.o
+*.gch
+eliminate
+sanitize
+

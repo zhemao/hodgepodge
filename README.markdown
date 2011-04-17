@@ -21,15 +21,14 @@ A session storage class for web.py that is backed by the redis key value store.
 Dependencies are web.py (http://webpy.org), redis (http://redis.io), and 
 redis-py (https://github.com/andymccurdy/redis-py)
 
-## eliminate.c
+## eliminate
 
 A simple C program that reads from a file or standard input, eliminates 
-whitespace characters, and prints to another file or standard output. 
+whitespace characters, and prints to the same or another file. 
 The usage is: eliminate [inputfilename] [outputfilename].
-If the input file name is omitted, standard input will be used. If the output
-file name is omitted, standard output will be used. To compile the program,
-just type gcc eliminate.c -o eliminate, or whatever you want to call the 
-executable.
+If inputfilename is not given, the program will read from standard input.
+If the outputfilename is not given, the program will write to standard output.
+`make eliminate` to compile
 
 ## inserttext.pl
 
@@ -43,11 +42,10 @@ line. `./sendgmail.py -m "message"` sends the text in the final argument.
 `./sendgmail.py -f "filename"` sends the text in the file specified by the last
 argument.
 
-## asciionly.py
+## sanitize
 
-A python script that removes non-ascii characters from a text file in 
-preparation for processing by programs written in languages without built-in
-unicode support.
+A C program that removes non-ascii characters and non-printing characters other than 
+\t, \r, and \n from a text file. Command-line usage is the same as for eliminate.
 
 ## importer.py
 
