@@ -44,8 +44,8 @@ argument.
 
 ## sanitize
 
-A C program that removes non-ascii characters and non-printing characters other than 
-\t, \r, and \n from a text file. Command-line usage is the same as for eliminate.
+A C program that removes non-ascii characters and non-printing characters 
+from a text file. Command-line usage is the same as for eliminate.
 
 ## importer.py
 
