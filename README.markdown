@@ -33,7 +33,8 @@ If outputfilename is not given, the program will write to standard output.
 ## inserttext.pl
 
 A perl script that inserts the text of one file into a certain line of another 
-file.
+file. Usage is inserttext.pl dest lineno [src]. If src is not given, text to
+be inserted will be taken from standard input.
 
 ## sendgmail.py
 
