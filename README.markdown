@@ -71,8 +71,7 @@ You can also add the character n in the action and aret will do the opposite of
 everything. That is, nc will count the lines not matching regex, and nf will
 print out the lines not matching regex. This does not work with substitution. 
 
-These scripts are made available under the MIT License 
-(http://www.opensource.org/licenses/mit-license.php)
+These scripts are made available under the MIT License, reproduced in LICENSE
 
 <copyright holder> Zhehao Mao
 <year> 2011
