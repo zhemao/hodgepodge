@@ -54,23 +54,6 @@ from a text file. Command-line usage is the same as for eliminate.
 Convenient methods for meta-programming around importing modules and objects
 in python
 
-## aret.pl
-
-ARET stands for Advanced Regular Expression Tool. It's a perl script which 
-makes it easier to do common things with regular expressions. It's basic
-usage is aret.pl action regex [extra]. Action can be one of the following.
-
-* c - count the lines in standard input which match the regular expression and
-print the result to standard output
-* f - filter standard input, outputting to standard output only the lines that 
-match the regular expression (this is basically just grep).
-* s - substitute all matches of regex in standard input with extra and print to
-standard output
-
-You can also add the character n in the action and aret will do the opposite of
-everything. That is, nc will count the lines not matching regex, and nf will
-print out the lines not matching regex. This does not work with substitution. 
-
 These scripts are made available under the MIT License, reproduced in LICENSE
 
 <copyright holder> Zhehao Mao
