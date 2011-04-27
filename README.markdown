@@ -18,8 +18,8 @@ operating systems. Hopefully it is fixed soon.
 ## redis_session.py
 
 A session storage class for web.py that is backed by the redis key value store.
-Dependencies are web.py (http://webpy.org), redis (http://redis.io), and 
-redis-py (https://github.com/andymccurdy/redis-py)
+Dependencies are [web.py](http://webpy.org), [redis](http://redis.io), and 
+[redis-py](https://github.com/andymccurdy/redis-py)
 
 ## eliminate
 
