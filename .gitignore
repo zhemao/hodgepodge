@@ -1,5 +1,5 @@
 *.o
 *.gch
-eliminate
+minify
 sanitize
 

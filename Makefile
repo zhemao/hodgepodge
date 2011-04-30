@@ -1,5 +1,5 @@
-eliminate: eliminate.c saferead.o
-	gcc saferead.o eliminate.c -o eliminate
+minify: minify.c saferead.o
+	gcc saferead.o minify.c -o minify
 	
 sanitize: sanitize.c
 	gcc saferead.o sanitize.c -o sanitize
