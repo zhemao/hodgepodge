@@ -54,7 +54,15 @@ from a text file. Command-line usage is the same as for eliminate.
 Convenient methods for meta-programming around importing modules and objects
 in python
 
+
+## fah
+
+A bash initscript for the Linux release of the Folding@Home program. For legal
+reasons, I do not redistribute Folding@Home, you must download it yourself.
+There are some variables that must be configured in the script. I have left
+some comments to tell you how.
+
+## License
+
 These scripts are made available under the MIT License, reproduced in LICENSE
 
-<copyright holder> Zhehao Mao
-<year> 2011
