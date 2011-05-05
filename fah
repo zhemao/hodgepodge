@@ -9,13 +9,17 @@
 # Change this to the directory where you downloaded/installed Folding@Home
 WORKDIR=$HOME/programs/fah
 
-# Change this to the filename of the Folding@Home release
+# Release is the name of the FAH release you will be using
+# the following is the 64-bit release
 RELEASE=FAH6.34-Linux64.tgz
+# Comment the line above and uncomment the line below to use the 32-bit release
+#RELEASE=FAH6.02-Linux.tgz
 
 # See Folding@Home documentation for instructions on command line arguments
-# This example runs Folding@Home on 2 cores with verbosity level 9
-# If you only have one core, get rid of "-smp 2"
-OPTIONS="-verbosity 9 -smp 2"
+# This example runs Folding@Home with verbosity level 9
+OPTIONS="-verbosity 9"
+# This one does the same, but uses two cores
+#OPTIONS="-verbosity 9 -smp 2"
 
 # The Folding@Home executable
 EXEC="./fah6"

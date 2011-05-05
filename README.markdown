@@ -60,7 +60,13 @@ in python
 A bash initscript for the Linux release of the Folding@Home program. For legal
 reasons, I do not redistribute Folding@Home, you must download it yourself.
 There are some variables that must be configured in the script. I have left
-some comments to tell you how.
+some comments to tell you how. The commands available in fah are install, 
+start, stop, and restart. Install allows you to configure FAH with certain
+options. You will want to choose "no" for asking you before downloading work
+from the server. Otherwise, FAH won't work in the background. Also, I suggest
+that you do not use Folding@Home on Linux unless you have a multi-core 
+computer, because the FAH program takes up all the processing power available
+to it for some reason.
 
 ## License
 
