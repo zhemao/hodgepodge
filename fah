@@ -58,6 +58,9 @@ case $1 in
 		stop_fah
 		start_fah
 		;;
+	log)
+		tail FAHlog.txt
+		;;
 	*)
 		echo "Usage: $0 {install|start|stop|restart}"
 esac
