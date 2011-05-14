@@ -5,7 +5,7 @@ sanitize: sanitize.c
 	gcc saferead.o sanitize.c -o sanitize
 	
 saferead.o: saferead.h saferead.c
-	gcc -c saferead.h saferead.c
+	gcc -c saferead.c
 
 clean:
 	rm -f eliminate sanitize *.o *.gch
