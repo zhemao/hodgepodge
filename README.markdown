@@ -68,7 +68,19 @@ that you do not use Folding@Home on Linux unless you have a multi-core
 computer, because the FAH program takes up all the processing power available
 to it for some reason.
 
+## aur.sh
+
+A bash script for interacting with the Arch User Repository from the 
+command line. The script takes five subcommands: fetch, unpack, build, 
+install, and clean. The fetch command downloads the package, unpack
+extracts the tarball, build runs makepkg, install runs pacman, and clean
+deletes the archive and the uncompressed folder. The fetch, unpack, 
+build and install commands are chained. Build and install will run 
+unpack if the installation folder doesn't exist. Unpack will run fetch
+if the tarball does not exist.
+
 ## License
 
-These scripts are made available under the MIT License, reproduced in LICENSE
+These scripts and programs are made available under the MIT License, 
+reproduced in LICENSE
 
