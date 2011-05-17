@@ -3,8 +3,7 @@
 # Where should packages be downloaded? 
 DOWNLOADDIR="$HOME/Downloads"
 
-# Where are our executables? Change these only if they are not on the 
-path
+# Where are our executables? Change these only if they are not on the path
 MAKEPKG=`which makepkg`
 WGET=`which wget`
 PACMAN=`which pacman`
