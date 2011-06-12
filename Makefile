@@ -1,3 +1,5 @@
+all: minify sanitize
+
 minify: minify.c saferead.o
 	gcc saferead.o minify.c -o minify
 	
