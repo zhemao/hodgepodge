@@ -2,4 +2,5 @@
 *.gch
 minify
 sanitize
-
+inserttext
+*test*

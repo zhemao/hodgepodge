@@ -25,16 +25,16 @@ Dependencies are [web.py](http://webpy.org), [redis](http://redis.io), and
 
 A simple C program that reads in text, eliminates the whitespace, and then
 writes it out. 
-The usage is: eliminate [inputfilename] [outputfilename].
+The usage is `eliminate [inputfilename] [outputfilename]`.
 If inputfilename is not given, the program will read from standard input.
 If outputfilename is not given, the program will write to standard output.
 `make eliminate` to compile
 
-## inserttext.pl
+## inserttext
 
-A perl script that inserts the text of one file into a certain line of another 
-file. Usage is inserttext.pl dest lineno [src]. If src is not given, text to
-be inserted will be taken from standard input.
+A C program that inserts the text of one file into a certain line of another 
+file. Usage is `inserttext.pl dest lineno [src]`. If src is not given, text to
+be inserted will be taken from standard input. `make inserttext` to compile
 
 ## sendgmail.py
 

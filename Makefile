@@ -8,6 +8,10 @@ sanitize: sanitize.c
 	
 saferead.o: saferead.h saferead.c
 	gcc -c saferead.c
+	
+inserttext: inserttext.c saferead.o
+	gcc saferead.o inserttext.c -o inserttext
 
 clean:
 	rm -f eliminate sanitize *.o *.gch
+	
