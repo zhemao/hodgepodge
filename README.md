@@ -25,7 +25,7 @@ Dependencies are [web.py](http://webpy.org), [redis](http://redis.io), and
 
 A simple C program that reads in text, eliminates the whitespace, and then
 writes it out. 
-The usage is `eliminate [inputfilename] [outputfilename]`.
+The usage is `./eliminate [inputfilename] [outputfilename]`.
 If inputfilename is not given, the program will read from standard input.
 If outputfilename is not given, the program will write to standard output.
 `make eliminate` to compile
@@ -33,7 +33,7 @@ If outputfilename is not given, the program will write to standard output.
 ## inserttext
 
 A C program that inserts the text of one file into a certain line of another 
-file. Usage is `inserttext.pl dest lineno [src]`. If src is not given, text to
+file. Usage is `./inserttext dest lineno [src]`. If src is not given, text to
 be inserted will be taken from standard input. `make inserttext` to compile
 
 ## sendgmail.py
@@ -63,10 +63,7 @@ There are some variables that must be configured in the script. I have left
 some comments to tell you how. The commands available in fah are install, 
 start, stop, and restart. Install allows you to configure FAH with certain
 options. You will want to choose "no" for asking you before downloading work
-from the server. Otherwise, FAH won't work in the background. Also, I suggest
-that you do not use Folding@Home on Linux unless you have a multi-core 
-computer, because the FAH program takes up all the processing power available
-to it for some reason.
+from the server. Otherwise, FAH won't work in the background. 
 
 ## aur.sh
 
