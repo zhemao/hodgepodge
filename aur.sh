@@ -48,7 +48,7 @@ install () {
 	fi
 	cd "$DOWNLOADDIR/$1"
 	if [ `id -ur` -eq 0 ]; then
-		pacman -U *.pkg.tar.*
+		sudo pacman -U *.pkg.tar.*
 	else
 		echo 'Error: you must be root to do this'
 	fi
