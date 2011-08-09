@@ -1,4 +1,4 @@
-all: minify sanitize inserttext todec
+all: minify sanitize inserttext todec fromdec
 
 minify: minify.c saferead.o
 	gcc saferead.o minify.c -o minify
@@ -11,6 +11,9 @@ inserttext: inserttext.c saferead.o
 
 todec: todec.c
 	gcc todec.c -o todec
+	
+fromdec: fromdec.c
+	gcc fromdec.c -o fromdec
 
 saferead.o: saferead.h saferead.c
 	gcc -c saferead.c

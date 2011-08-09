@@ -1,7 +1,7 @@
 # Hodgepodge Utilities
 
-This is a collection of miscellaneous programs and utilities that I felt were
-too small to get their own repositories but are nonetheless rather useful.
+This is a collection of miscellaneous scripts and utilities that I felt were
+too small to get their own repositories but are nonetheless somewhat useful.
 
 The contents of this repository are:
 
@@ -14,12 +14,6 @@ named (packagename)-(version)-py(pythonversion).egg-info. This script simply
 changes all of the names in the installation directory to the correct names.
 I am unsure whether the bug is specific to Ubuntu or whether it affects all 
 operating systems. Hopefully it is fixed soon.
-
-## redis_session.py
-
-A session storage class for web.py that is backed by the redis key value store.
-Dependencies are [web.py](http://webpy.org), [redis](http://redis.io), and 
-[redis-py](https://github.com/andymccurdy/redis-py)
 
 ## eliminate
 
@@ -48,12 +42,6 @@ argument.
 A C program that removes non-ascii characters and non-printing characters 
 from a text file. Command-line usage is the same as for eliminate. 
 `make sanitize` to compile
-
-## importer.py
-
-Convenient methods for meta-programming around importing modules and objects
-in python
-
 
 ## fah
 
