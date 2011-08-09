@@ -64,6 +64,19 @@ build and install commands are chained. Build and install will run
 unpack if the installation folder doesn't exist. Unpack will run fetch
 if the tarball does not exist.
 
+## todec
+
+Takes a number in hexadecimal, octal, or binary, and converts it to decimal.
+Usage is todec [format] [number], where format is -x for hex, -o for octal,
+or -b for binary (default is hex), and number is the number to convert. If
+the number is not given, the number to convert will be taken from standard
+input. The converted number is printed to standard output.
+
+## fromdec
+
+The opposite of todec. Converts a decimal number to hex, octal, or binary
+format. Usage is the same as todec.
+
 ## License
 
 These scripts and programs are made available under the MIT License, 

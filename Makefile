@@ -1,4 +1,9 @@
-all: minify sanitize inserttext todec fromdec
+EXECUTABLES=minify sanitize inserttext todec fromdec
+
+all: $(EXECUTABLES)
+
+install: all
+	cp $(EXECUTABLES) ~/bin
 
 minify: minify.c saferead.o
 	gcc saferead.o minify.c -o minify
