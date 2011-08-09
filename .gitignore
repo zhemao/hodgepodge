@@ -3,4 +3,6 @@
 minify
 sanitize
 inserttext
+todec
+fromdec
 *test*
