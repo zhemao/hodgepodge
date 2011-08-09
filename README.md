@@ -65,7 +65,7 @@ start, stop, and restart. Install allows you to configure FAH with certain
 options. You will want to choose "no" for asking you before downloading work
 from the server. Otherwise, FAH won't work in the background. 
 
-## aur.sh
+## aur
 
 A bash script for interacting with the Arch User Repository from the 
 command line. The script takes five subcommands: fetch, unpack, build, 
