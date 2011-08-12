@@ -67,7 +67,7 @@ if the tarball does not exist.
 ## todec
 
 Takes a number in hexadecimal, octal, or binary, and converts it to decimal.
-Usage is todec [format] [number], where format is -x for hex, -o for octal,
+Usage is `todec [format] [number]`, where format is -x for hex, -o for octal,
 or -b for binary (default is hex), and number is the number to convert. If
 the number is not given, the number to convert will be taken from standard
 input. The converted number is printed to standard output.
@@ -76,6 +76,12 @@ input. The converted number is printed to standard output.
 
 The opposite of todec. Converts a decimal number to hex, octal, or binary
 format. Usage is the same as todec.
+
+## pdfcat
+
+Use the ghostscript program to concatenate several pdf files together. 
+Usage: `pdfcat [file1 file2 file3 ...]`. PDF file is printed to standard 
+output.
 
 ## License
 
