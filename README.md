@@ -43,7 +43,7 @@ A C program that removes non-ascii characters and non-printing characters
 from a text file. Command-line usage is the same as for eliminate. 
 `make sanitize` to compile
 
-## fah
+## fah.sh
 
 A bash initscript for the Linux release of the Folding@Home program. For legal
 reasons, I do not redistribute Folding@Home, you must download it yourself.
@@ -53,7 +53,7 @@ start, stop, and restart. Install allows you to configure FAH with certain
 options. You will want to choose "no" for asking you before downloading work
 from the server. Otherwise, FAH won't work in the background. 
 
-## aur
+## aur.sh
 
 A bash script for interacting with the Arch User Repository from the 
 command line. The script takes five subcommands: fetch, unpack, build, 
@@ -77,7 +77,7 @@ input. The converted number is printed to standard output.
 The opposite of todec. Converts a decimal number to hex, octal, or binary
 format. Usage is the same as todec.
 
-## pdfcat
+## pdfcat.sh
 
 Use the ghostscript program to concatenate several pdf files together. 
 Usage: `pdfcat [file1 file2 file3 ...]`. PDF file is printed to standard 
@@ -96,6 +96,12 @@ protected mode. The "from" dictionary also has an optional key "query" which
 is used to select the records to be migrated. If "query" is not provided, all
 records in the "from" collection are used. The "migration.json" file in this
 repository is a good example.
+
+## webpipe.sh
+
+A shell script that takes HTML from standard input and displays it in your 
+webbrowser. In order for this to work, you must set the $BROWSER environmental
+variable to your preferred webbrowser.
 
 ## License
 
