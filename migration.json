@@ -1,0 +1,17 @@
+{
+	"from":{
+		"host": "localhost",
+		"port": 10027,
+		"database": "test",
+		"collection": "testing",
+		"query": {"foo": "bar"}
+	},
+	"to":{
+		"host": "flame.mongohq.com",
+		"port": 10077,
+		"database": "userdb",
+		"collection": "things",
+		"username": "someuser",
+		"password": "somepassword"
+	}
+}

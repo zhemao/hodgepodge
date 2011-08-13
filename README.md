@@ -83,6 +83,20 @@ Use the ghostscript program to concatenate several pdf files together.
 Usage: `pdfcat [file1 file2 file3 ...]`. PDF file is printed to standard 
 output.
 
+## mongomigrate.py
+
+A quick and dirty python script to migrate records from one mongodb collection
+to another. Usage is `mongomigrate.py [filename]`, where filename is the name
+of a configuration json file used by the script. If filename is not provided,
+it defaults to "migration.json". The json file should include a dictionary with
+two keys: "from" and "to". The values of these should be dictionaries with 
+required keys "host", "port", "database", and "collection". There are also
+optional keys "username" and "password" if the mongodb instance is running in
+protected mode. The "from" dictionary also has an optional key "query" which
+is used to select the records to be migrated. If "query" is not provided, all
+records in the "from" collection are used. The "migration.json" file in this
+repository is a good example.
+
 ## License
 
 These scripts and programs are made available under the MIT License, 
