@@ -1,0 +1,7 @@
+#!/bin/sh
+
+TMPFILE=/tmp/webpipe$RANDOM.html
+
+cat > $TMPFILE
+
+$BROWSER $TMPFILE
