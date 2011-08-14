@@ -103,6 +103,12 @@ A shell script that takes HTML from standard input and displays it in your
 webbrowser. In order for this to work, you must set the $BROWSER environmental
 variable to your preferred webbrowser.
 
+## pipify.sh
+
+Make any program pipeable. Takes a program that reads input from a file and 
+allows it to read from standard input. For instance, to make the vim editor
+pipeable, you would do something like `echo "Hello" | ./pipify.sh vim`.
+
 ## License
 
 These scripts and programs are made available under the MIT License, 
