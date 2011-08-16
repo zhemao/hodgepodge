@@ -3,7 +3,7 @@
 echo "<html>"
 
 if [ -z $1 ]; then
-	echo "<title>wrapped.html</title><body>"
+	echo "<body>"
 	cat
 else
 	echo $1
