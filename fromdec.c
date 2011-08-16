@@ -25,7 +25,7 @@ void print_binary(int num){
 }
 
 void usage(char * name){
-	fprintf(stderr, "Usage: %s [format] [number]");
+	fprintf(stderr, "Usage: %s [format] [number]\n", name);
 	exit(EXIT_FAILURE);
 }
 

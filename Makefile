@@ -3,7 +3,7 @@ EXECUTABLES=minify sanitize inserttext todec fromdec
 all: $(EXECUTABLES)
 
 install: all
-	cp $(EXECUTABLES) ~/bin
+	./install.sh
 
 minify: minify.c saferead.o
 	gcc saferead.o minify.c -o minify
