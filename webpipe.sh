@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-TMPFILE=/tmp/webpipe$RANDOM.html
+TMPFILE="/tmp/webpipe$RANDOM.html"
 
 cat > $TMPFILE
 
