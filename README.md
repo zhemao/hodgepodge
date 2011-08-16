@@ -3,6 +3,9 @@
 This is a collection of miscellaneous scripts and utilities that I felt were
 too small to get their own repositories but are nonetheless somewhat useful.
 
+Run `make` to compile all the binaries and `make install` or `install.sh` to
+create symlinks to the binaries.
+
 The contents of this repository are:
 
 ## fixpip.py
