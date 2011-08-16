@@ -104,13 +104,26 @@ repository is a good example.
 
 A shell script that takes HTML from standard input and displays it in your 
 webbrowser. In order for this to work, you must set the $BROWSER environmental
-variable to your preferred webbrowser.
+variable to your preferred web browser.
 
 ## pipify.sh
 
 Make any program pipeable. Takes a program that reads input from a file and 
 allows it to read from standard input. For instance, to make the vim editor
 pipeable, you would do something like `echo "Hello" | ./pipify.sh vim`.
+
+## htmlwrap.sh
+
+Wrap some text in <html> and <body> tags for sending to a browser.
+Usage is `htmlwrap.sh [filename]`. If filename is not provided, the script
+will read from standard input.
+
+## git-pullall.sh
+
+Finds all git repositories in a directory and does `git pull origin master` 
+on each of them. Usage is `git-pullall.sh [directory]`, where directory is 
+the directory in which to start searching. It defaults to the current working
+directory.
 
 ## License
 
