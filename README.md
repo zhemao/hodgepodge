@@ -118,12 +118,12 @@ Wrap some text in <html> and <body> tags for sending to a browser.
 Usage is `htmlwrap.sh [filename]`. If filename is not provided, the script
 will read from standard input.
 
-## git-pullall.sh
+## pullall.sh
 
-Finds all git repositories in a directory and does `git pull origin master` 
-on each of them. Usage is `git-pullall.sh [directory]`, where directory is 
-the directory in which to start searching. It defaults to the current working
-directory.
+Finds all git and mercurial repositories in a directory and does 
+`git pull origin master` or `hg pull -u` on each of them. 
+Usage is `pullall.sh [directory]`, where directory is the directory in which 
+to start searching. It defaults to the current working directory.
 
 ## License
 
