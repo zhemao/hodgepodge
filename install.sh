@@ -7,8 +7,11 @@ do
 	ln -fs $PWD/$file $HOME/bin/$file
 done
 
-for file in *.sh *.py
+shopt -s extglob
+
+for file in !(install).sh *.py
 do
 	shortname=`echo $file | sed -e "s/\..*//g"`
+	echo $shortname
 	ln -fs $PWD/$file $HOME/bin/$shortname
 done
