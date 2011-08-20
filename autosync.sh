@@ -3,8 +3,16 @@
 LOCALDIR=$1
 REMOTEDIR=$2
 
-inotifywait -mr -e close_write -e create -e delete $LOCALDIR | \
+rsync -avz --delete $LOCALDIR $REMOTEDIR
+
+EVENTS="CREATE,CLOSE_WRITE,DELETE,MOVED_FROM,MOVED_TO"
+
+inotifywait -mr -e $EVENTS $LOCALDIR | \
 	while read dir event file; do
-		date +"Synchronized $LOCALDIR at %Y/%m/%d %H:%M:%S"
-		rsync -avz --delete $LOCALDIR $REMOTEDIR 
+		date +"Received $event at %Y/%m/%d %H:%M:%S"
+		if [ $event == "DELETE" ]; then
+			rsync -avz --delete $LOCALDIR $REMOTEDIR
+		else
+			rsync -avz $LOCALDIR/$file $REMOTEDIR/$file 
+		fi
 	done

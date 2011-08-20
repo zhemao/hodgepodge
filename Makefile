@@ -24,5 +24,5 @@ saferead.o: saferead.h saferead.c
 	gcc -c saferead.c
 
 clean:
-	rm -f eliminate sanitize *.o *.gch
+	rm -f $(EXECUTABLES) *.o 
 	
