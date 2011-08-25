@@ -1,7 +1,11 @@
-#!/bin/bash
+#!/bin/sh
 
-TMPFILE="/tmp/webpipe$RANDOM.html"
+TMPFILE="/tmp/webpipe$$.html"
 
 cat > $TMPFILE
 
-$BROWSER $TMPFILE
+if [ -z $BROWSER ]; then
+	echo "The \$BROWSER variable has not been set"
+else
+	$BROWSER $TMPFILE
+fi
