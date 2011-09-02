@@ -103,8 +103,7 @@ repository is a good example.
 ## webpipe.sh
 
 A shell script that takes HTML from standard input and displays it in your 
-webbrowser. In order for this to work, you must set the $BROWSER environmental
-variable to your preferred web browser.
+default webbrowser.
 
 ## pipify.sh
 
@@ -114,7 +113,7 @@ pipeable, you would do something like `echo "Hello" | ./pipify.sh vim`.
 
 ## htmlwrap.sh
 
-Wrap some text in <html> and <body> tags for sending to a browser.
+Wrap some text in &lt;html&gt; and &lt;body&gt; tags for sending to a browser.
 Usage is `htmlwrap.sh [filename]`. If filename is not provided, the script
 will read from standard input.
 
