@@ -117,6 +117,11 @@ Wrap some text in &lt;html&gt; and &lt;body&gt; tags for sending to a browser.
 Usage is `htmlwrap.sh [filename]`. If filename is not provided, the script
 will read from standard input.
 
+## cmpsize.sh
+
+Compares the size of two files using `stat` and `bc`. Usage is 
+`cmpsize file1 file2`.
+
 ## pullall.sh
 
 Finds all git and mercurial repositories in a directory and does 
