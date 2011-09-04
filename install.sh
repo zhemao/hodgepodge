@@ -11,7 +11,6 @@ for file in *.sh *.py
 do
 	if [ $file != "install.sh" ]; then
 		shortname=`echo $file | sed -e "s/\..*//g"`
-		echo $shortname
 		ln -fs $PWD/$file $HOME/bin/$shortname
 	fi
 done
