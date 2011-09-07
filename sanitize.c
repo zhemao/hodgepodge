@@ -18,7 +18,13 @@ int main(int argc, char *argv[]){
 	char * buf;
 	if(argc<2)
 		f = stdin;
-	else f = fopen(argv[1], "r");
+	else{
+		f = fopen(argv[1], "r");
+		if(f==NULL){
+			fprintf(stderr, "Could not read %s\n", argv[1]);
+			exit(EXIT_FAILURE);
+		}
+	}
 	buf = saferead(f);
 	if(argc<3)
 		f = stdout;

@@ -13,9 +13,18 @@ int main(int argc, char *argv[]){
 		exit(1);
 	}
 	f1 = fopen(argv[1], "r");
+	if(f1==NULL){ 
+		fprintf(stderr, "Could not read %s.\n", argv[1]);
+		exit(EXIT_FAILURE);
+	}
 	target = atoi(argv[2]);
-	if(argc > 3)
+	if(argc > 3){
 		f2 = fopen(argv[3], "r");
+		if(f2 == NULL){
+			fprintf(stderr, "Could not read %s.\n", argv[3]);
+			exit(EXIT_FAILURE);
+		}
+	}
 	else f2 = stdin;
 	str1 = saferead(f1);
 	str2 = saferead(f2);
