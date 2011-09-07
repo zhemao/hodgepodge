@@ -1,4 +1,5 @@
 EXECUTABLES=minify sanitize inserttext todec fromdec
+OPTS=-O2
 
 all: $(EXECUTABLES)
 
@@ -6,22 +7,22 @@ install: all
 	./install.sh
 
 minify: minify.c saferead.o
-	gcc saferead.o minify.c -o minify
+	gcc $(OPTS) saferead.o minify.c -o minify
 	
 sanitize: sanitize.c
-	gcc saferead.o sanitize.c -o sanitize
+	gcc $(OPTS) saferead.o sanitize.c -o sanitize
 	
 inserttext: inserttext.c saferead.o
-	gcc saferead.o inserttext.c -o inserttext
+	gcc $(OPTS) saferead.o inserttext.c -o inserttext
 
 todec: todec.c
-	gcc todec.c -o todec
+	gcc $(OPTS) todec.c -o todec
 	
 fromdec: fromdec.c
-	gcc fromdec.c -o fromdec
+	gcc $(OPTS) fromdec.c -o fromdec
 
 saferead.o: saferead.h saferead.c
-	gcc -c saferead.c
+	gcc $(OPTS) -c saferead.c
 
 clean:
 	rm -f $(EXECUTABLES) *.o 
