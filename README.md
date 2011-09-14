@@ -129,6 +129,19 @@ Finds all git and mercurial repositories in a directory and does
 Usage is `pullall.sh [directory]`, where directory is the directory in which 
 to start searching. It defaults to the current working directory.
 
+## mount_server.pl
+
+Convenient wrapper for `curlftpfs` and `sshfs`. Takes an argument in the form 
+of a url *protocol*://*username*@*servername*. Valid protocols are `ftp` and 
+`ssh`. If ssh, the script will mount the home directory of the user. The 
+mountpoint will be ~/.fuse/*servername*.
+
+## unmount_server.sh
+
+Companion to mount_server.pl. Takes a single argument, which is the servername.
+The corresponding directory (~/.fuse/*servername*) will be unmounted and 
+removed.
+
 ## License
 
 These scripts and programs are made available under the MIT License, 
