@@ -7,7 +7,7 @@ do
 	ln -fs $PWD/$file $HOME/bin/$file
 done
 
-for file in *.sh *.py
+for file in *.sh *.py *.pl
 do
 	if [ $file != "install.sh" ]; then
 		shortname=`echo $file | sed -e "s/\..*//g"`
