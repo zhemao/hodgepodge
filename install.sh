@@ -14,3 +14,7 @@ do
 		ln -fs $PWD/$file $HOME/bin/$shortname
 	fi
 done
+
+if [ ! -d ~/.fuse ]; then
+	mkdir ~/.fuse
+fi
