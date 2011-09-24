@@ -25,4 +25,6 @@ if($url =~ /(\w+):\/\/(\w+)@([\w.-]+)/){
 	if($retcode == 0){
 		system("thunar ~/.fuse/$location");
 	}
+} else {
+	print "Not a valid URL\n";
 }
