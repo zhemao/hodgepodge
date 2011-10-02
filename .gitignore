@@ -5,5 +5,6 @@ sanitize
 inserttext
 todec
 fromdec
+aucat
 *test*
 *.swp

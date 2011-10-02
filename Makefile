@@ -1,4 +1,4 @@
-EXECUTABLES=minify sanitize inserttext todec fromdec
+EXECUTABLES=minify sanitize inserttext todec fromdec aucat
 OPTS=-O2
 
 all: $(EXECUTABLES)
@@ -23,6 +23,9 @@ fromdec: fromdec.c
 
 saferead.o: saferead.h saferead.c
 	gcc $(OPTS) -c saferead.c
+
+aucat: aucat.c
+	gcc $(OPTS) aucat.c -lao -o aucat
 
 clean:
 	rm -f $(EXECUTABLES) *.o 
