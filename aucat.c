@@ -50,6 +50,10 @@ int main(int argc, char *argv[]){
 		int i;
 		for(i=1; i<argc; i++){
 			f = fopen(argv[i], "r");
+			if(f == NULL){
+				fprintf(stderr, "Could not open %s\n", argv[i]);
+				continue;
+			}
 			play_file(dev, f);
 			fclose(f);
 		}
