@@ -9,12 +9,20 @@
 
 #define BUFFER_SIZE 1024
 
+int play_file(ao_device * dev, FILE * f){
+	short data[BUFFER_SIZE];
+	int nb;
+
+	while((nb = fread(data, sizeof(short), BUFFER_SIZE, f)) > 0){
+		ao_play(dev, (char*)data, nb * sizeof(short));
+	}
+}
+
 int main(int argc, char *argv[]){
 	ao_device * dev;
 	ao_sample_format fmt;
 	int driver;
-	short data[BUFFER_SIZE];
-	int nb;
+	FILE * f;
 
 	memset(&fmt, 0, sizeof(fmt));
 	fmt.bits = sizeof(short)*8;
@@ -36,8 +44,15 @@ int main(int argc, char *argv[]){
 		exit(EXIT_FAILURE);
 	}
 	
-	while((nb = fread(data, sizeof(short), BUFFER_SIZE, stdin)) > 0){
-		ao_play(dev, (char*)data, nb * sizeof(short));
+	if(argc <= 1)
+		play_file(dev, stdin);
+	else {
+		int i;
+		for(i=1; i<argc; i++){
+			f = fopen(argv[i], "r");
+			play_file(dev, f);
+			fclose(f);
+		}
 	}
 
 	ao_close(dev);
