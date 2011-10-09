@@ -14,11 +14,15 @@ if($url =~ /(\w+):\/\/(\w+)@([\w.-]+)/){
 	my $location = $3;
 	my $retcode;
 
+	`mkdir -p ~/.fuse/$location`;
+
 	if( $protocol eq 'ftp' ){
 		$retcode = system("curlftpfs -o user=$user $location ~/.fuse/$location");
 	} elsif ($protocol eq 'ssh'){
 		$retcode = system("sshfs $user\@$location: ~/.fuse/$location");
-	} else {
+	} elsif ($protocol eq 's3'){
+		$retcode = system("s3fs $location:/ ~/.fuse/$location");
+	}else {
 		die("unrecognized protocol.");
 	}
 
