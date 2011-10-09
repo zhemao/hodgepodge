@@ -8,7 +8,7 @@ if(!$url){
 	die "no url given"
 }
 
-if($url =~ /(\w+):\/\/(\w+)@([\w.-]+)/){
+if($url =~ /(\w+):\/\/(\w*?)@?([\w.-]+)/){
 	my $protocol = $1;
 	my $user = $2;
 	my $location = $3;
@@ -17,10 +17,13 @@ if($url =~ /(\w+):\/\/(\w+)@([\w.-]+)/){
 	`mkdir -p ~/.fuse/$location`;
 
 	if( $protocol eq 'ftp' ){
+		print("mounting $user\@$location to ~/.fuse/$location\n");
 		$retcode = system("curlftpfs -o user=$user $location ~/.fuse/$location");
 	} elsif ($protocol eq 'ssh'){
+		print("mounting $user\@$location to ~/.fuse/$location\n");
 		$retcode = system("sshfs $user\@$location: ~/.fuse/$location");
 	} elsif ($protocol eq 's3'){
+		print("mounting $location to ~/.fuse/$location\n");
 		$retcode = system("s3fs $location:/ ~/.fuse/$location");
 	}else {
 		die("unrecognized protocol.");
