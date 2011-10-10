@@ -8,16 +8,21 @@ if(!$url){
 	die "no url given"
 }
 
-if($url =~ /(\w+):\/\/(\w*?)@?([\w.-]+)/){
+if($url =~ /(\w+):\/\/([\w.-@]+)/){
 	my $protocol = $1;
-	my $user = $2;
-	my $location = $3;
+	my $location = $2;
+	my $user;
 	my $retcode;
+
+	if($location =~ /(\w+)@([\w.-]+)/){
+		$location = $2;
+		$user = $1;
+	}
 
 	`mkdir -p ~/.fuse/$location`;
 
 	if( $protocol eq 'ftp' ){
-		print("mounting $user\@$location to ~/.fuse/$location\n");
+		print("mounting $location to ~/.fuse/$location\n");
 		$retcode = system("curlftpfs -o user=$user $location ~/.fuse/$location");
 	} elsif ($protocol eq 'ssh'){
 		print("mounting $user\@$location to ~/.fuse/$location\n");
