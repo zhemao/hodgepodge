@@ -1,10 +1,13 @@
-EXECUTABLES=minify sanitize inserttext todec fromdec aucat
+EXECUTABLES=minify sanitize inserttext todec fromdec aucat lrange
 OPTS=-O2
 
 all: $(EXECUTABLES)
 
 install: all
 	./install.sh
+
+lrange: lrange.c saferead.o
+	gcc $(OPTS) saferead.o lrange.c -o lrange
 
 minify: minify.c saferead.o
 	gcc $(OPTS) saferead.o minify.c -o minify

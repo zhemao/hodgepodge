@@ -6,5 +6,6 @@ inserttext
 todec
 fromdec
 aucat
+lrange
 *test*
 *.swp
