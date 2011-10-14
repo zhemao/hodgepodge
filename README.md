@@ -136,9 +136,9 @@ of a url *protocol*://*username*@*servername*. Valid protocols are `ftp` and
 `ssh`. If ssh, the script will mount the home directory of the user. The 
 mountpoint will be ~/.fuse/*servername*.
 
-## unmount_server.sh
+## unmount\_server.sh
 
-Companion to mount_server.pl. Takes a single argument, which is the servername.
+Companion to mount\_server.pl. Takes a single argument, which is the servername.
 The corresponding directory (~/.fuse/*servername*) will be unmounted and 
 removed.
 
@@ -148,6 +148,15 @@ Usage: aucat [file1, file2, ...]
 
 Sends binary data from the given files to the default libao driver. If no 
 arguments are given, reads data from standard input.
+
+## lrange
+
+Usage: lrange start end [infile] [outfile]
+
+Reads in the a file and outputs a range of its lines to another file. The 
+`start` and `end` arguments mark the range of lines which should be output 
+and are inclusive (i.e. lrange 1 2 will output lines 1 and 2). If infile or
+outfile are not given, standard input and standard output will be used.
 
 ## License
 

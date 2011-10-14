@@ -1,6 +1,6 @@
 #!/bin/sh
 
-EXECUTABLES="minify sanitize inserttext todec fromdec aucat"
+EXECUTABLES="minify sanitize inserttext todec fromdec aucat lrange"
 
 for file in $EXECUTABLES
 do
