@@ -7,11 +7,11 @@ int main(int argc, char *argv[]){
 	FILE * infile, * outfile;
 	int start;
 	int end;
-	char * text, * line;
+	char line[1024] = {0};
 	int lineno = 1;
 
 	if(argc < 3){
-		printf("Usage: %s pos1 pos2 [infile] [outfile]\n", argv[0]);
+		printf("Usage: %s start end [infile] [outfile]\n", argv[0]);
 		exit(EXIT_FAILURE);
 	}
 
@@ -34,20 +34,16 @@ int main(int argc, char *argv[]){
 		}
 	} else outfile = stdout;
 
-	text = saferead(infile);
-	line = strtok(text, "\n");
 
-	while(line){
+	while(fgets(line, 1024, infile)){
 		if(lineno > end) break;
 		if(lineno >= start)
-			fprintf(outfile, "%s\n", line);
-		line = strtok(NULL, "\n");
+			fprintf(outfile, "%s", line);
 		lineno++;
 	}
 
 	fclose(infile);
 	fclose(outfile);
-	free(text);
 
 	return 0;
 }
