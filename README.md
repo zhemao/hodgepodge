@@ -129,7 +129,7 @@ Finds all git and mercurial repositories in a directory and does
 Usage is `pullall.sh [directory]`, where directory is the directory in which 
 to start searching. It defaults to the current working directory.
 
-## mount_server.pl
+## mount\_server.pl
 
 Convenient wrapper for `curlftpfs` and `sshfs`. Takes an argument in the form 
 of a url *protocol*://*username*@*servername*. Valid protocols are `ftp` and 
@@ -157,6 +157,17 @@ Reads in the a file and outputs a range of its lines to another file. The
 `start` and `end` arguments mark the range of lines which should be output 
 and are inclusive (i.e. lrange 1 2 will output lines 1 and 2). If infile or
 outfile are not given, standard input and standard output will be used.
+
+## music\_shuffle.sh
+
+Usage: music\_shuffle.sh [directory]
+
+Finds all the music files in a directory and plays them at random using mplayer.
+If the directory is not given on the command line, it will take it from the
+`MUSIC_FOLDER` environmental variable. If this variable is not defined, it will
+default to using $HOME/Music. This script is also affected by the `MUSIC_PLAYER`
+environmental variable. If this variable is defined, it will be used in place
+of mplayer.
 
 ## License
 
