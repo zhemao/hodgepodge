@@ -11,7 +11,7 @@ int main(int argc, char *argv[]){
 	int lineno = 1;
 
 	if(argc < 3){
-		printf("Usage: %s start end [infile] [outfile]\n", argv[0]);
+		fprintf(stderr, "Usage: %s start end [infile] [outfile]\n", argv[0]);
 		exit(EXIT_FAILURE);
 	}
 
