@@ -155,12 +155,12 @@ outfile are not given, standard input and standard output will be used.
 
 Usage: music\_shuffle.sh [directory]
 
-Finds all the music files in a directory and plays them at random using mplayer.
-If the directory is not given on the command line, it will take it from the
-`MUSIC_FOLDER` environmental variable. If this variable is not defined, it will
-default to using $HOME/Music. This script is also affected by the `MUSIC_PLAYER`
-environmental variable. If this variable is defined, it will be used in place
-of mplayer.
+Finds all the music files in a directory and plays them at random using 
+mplayer. If the directory is not given on the command line, it will take it 
+from the `MUSIC_FOLDER` environmental variable. If this variable is not 
+defined, it will default to using $HOME/Music. This script is also affected 
+by the `MUSIC_PLAYER` environmental variable. If this variable is defined, 
+it will be used in place of mplayer.
 
 ## License
 
