@@ -142,13 +142,6 @@ Companion to mount\_server.pl. Takes a single argument, which is the servername.
 The corresponding directory (~/.fuse/*servername*) will be unmounted and 
 removed.
 
-## aucat
-
-Usage: aucat [file1, file2, ...]
-
-Sends binary data from the given files to the default libao driver. If no 
-arguments are given, reads data from standard input.
-
 ## lrange
 
 Usage: lrange start end [infile] [outfile]
