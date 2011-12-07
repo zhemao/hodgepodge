@@ -1,6 +1,6 @@
 #!/bin/sh
 
-EXECUTABLES="minify sanitize inserttext todec fromdec aucat lrange"
+EXECUTABLES="minify sanitize inserttext todec fromdec lrange timestamp"
 
 for file in $EXECUTABLES
 do

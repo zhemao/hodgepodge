@@ -1,4 +1,4 @@
-EXECUTABLES=minify sanitize inserttext todec fromdec lrange
+EXECUTABLES=minify sanitize inserttext todec fromdec lrange timestamp
 OPTS=-O2
 
 all: $(EXECUTABLES)
@@ -23,6 +23,9 @@ todec: todec.c
 	
 fromdec: fromdec.c
 	gcc $(OPTS) fromdec.c -o fromdec
+
+timestamp: timestamp.c
+	gcc $(OPTS) timestamp.c -o timestamp
 
 saferead.o: saferead.h saferead.c
 	gcc $(OPTS) -c saferead.c
