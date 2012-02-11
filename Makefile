@@ -1,4 +1,5 @@
-EXECUTABLES=minify sanitize inserttext todec fromdec lrange timestamp
+EXECUTABLES=minify sanitize inserttext todec fromdec lrange timestamp \
+			echorandom
 OPTS=-O2
 
 all: $(EXECUTABLES)
@@ -29,6 +30,9 @@ timestamp: timestamp.c
 
 saferead.o: saferead.h saferead.c
 	gcc $(OPTS) -c saferead.c
+
+echorandom: echorandom.c
+	gcc $(OPTS) echorandom.c -o echorandom
 
 clean:
 	rm -f $(EXECUTABLES) *.o 
