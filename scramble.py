@@ -10,4 +10,5 @@ if __name__ == "__main__":
     for i, fname in enumerate(files):
         _, ext = os.path.splitext(fname)
         newname = str(i+1) + ext
+        print(fname + " is now " + newname)
         shutil.copy(fname, newname)
