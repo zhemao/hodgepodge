@@ -27,6 +27,7 @@ echo "Installing python scripts"
 for file in *.py
 do
 	shortname=`echo $file | sed -e "s/\..*//"`
+	rm $HOME/bin/$shortname
 	echo "#!$PYTHON" > $HOME/bin/$shortname
 	cat $file >> $HOME/bin/$shortname
 	chmod +x $HOME/bin/$shortname
