@@ -16,6 +16,10 @@ else
 	VOLUME='muted'
 fi
 
-MPDSTAT=`mpc current`
+if [ "`mpc status | grep "\[playing\]"`" ]; then
+	MPDSTAT=`mpc current`
+else
+	MPDSTAT='PAUSED'
+fi
 
 echo "$MPDSTAT | Battery: $BATTERY $CHARGING | Volume: $VOLUME | $DATE"
