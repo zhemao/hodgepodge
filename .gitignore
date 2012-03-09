@@ -8,5 +8,6 @@ fromdec
 timestamp
 lrange
 echorandom
+spanel
 *test*
 *.swp

@@ -1,38 +1,43 @@
 EXECUTABLES=minify sanitize inserttext todec fromdec lrange timestamp \
-			echorandom
-OPTS=-O2
+			echorandom spanel
+
+CC=gcc
+OPTS=-O2 -Wall
 
 all: $(EXECUTABLES)
 
 install: all
 	./install.sh
 
+spanel: spanel.c
+	$(CC) $(OPTS) spanel.c -lX11 -o spanel
+
 lrange: lrange.c saferead.o
-	gcc $(OPTS) saferead.o lrange.c -o lrange
+	$(CC) $(OPTS) saferead.o lrange.c -o lrange
 
 minify: minify.c saferead.o
-	gcc $(OPTS) saferead.o minify.c -o minify
+	$(CC) $(OPTS) saferead.o minify.c -o minify
 	
 sanitize: sanitize.c
-	gcc $(OPTS) saferead.o sanitize.c -o sanitize
+	$(CC) $(OPTS) saferead.o sanitize.c -o sanitize
 	
 inserttext: inserttext.c saferead.o
-	gcc $(OPTS) saferead.o inserttext.c -o inserttext
+	$(CC) $(OPTS) saferead.o inserttext.c -o inserttext
 
 todec: todec.c
-	gcc $(OPTS) todec.c -o todec
+	$(CC) $(OPTS) todec.c -o todec
 	
 fromdec: fromdec.c
-	gcc $(OPTS) fromdec.c -o fromdec
+	$(CC) $(OPTS) fromdec.c -o fromdec
 
 timestamp: timestamp.c
-	gcc $(OPTS) timestamp.c -o timestamp
+	$(CC) $(OPTS) timestamp.c -o timestamp
 
 saferead.o: saferead.h saferead.c
-	gcc $(OPTS) -c saferead.c
+	$(CC) $(OPTS) -c saferead.c
 
 echorandom: echorandom.c
-	gcc $(OPTS) echorandom.c -o echorandom
+	$(CC) $(OPTS) echorandom.c -o echorandom
 
 clean:
 	rm -f $(EXECUTABLES) *.o 
