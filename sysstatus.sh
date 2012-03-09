@@ -22,4 +22,6 @@ else
 	MPDSTAT='PAUSED'
 fi
 
-echo "$MPDSTAT | Battery: $BATTERY $CHARGING | Volume: $VOLUME | $DATE"
+CPUFREQ="`cpufreq-info -mf`"
+
+echo "Battery: $BATTERY $CHARGING | Volume: $VOLUME | $DATE | CPU: $CPUFREQ | $MPDSTAT"
