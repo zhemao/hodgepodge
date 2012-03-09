@@ -162,6 +162,19 @@ defined, it will default to using $HOME/Music. This script is also affected
 by the `MUSIC_PLAYER` environmental variable. If this variable is defined, 
 it will be used in place of mplayer.
 
+## sysstatus.sh
+
+Prints out a summary of some things on your system, including battery, speaker
+volume, datetime, cpu frequency, and MPD status.
+
+## spanel
+
+Usage: spanel command
+
+Draws a simple status panel at the bottom of your X screen. The contents of the
+panel are taken from the first line of standard output after running command.
+The status line is refreshed every second.
+
 ## License
 
 These scripts and programs are made available under the MIT License, 
