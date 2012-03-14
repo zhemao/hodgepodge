@@ -9,14 +9,15 @@ function dbus_send_ck {
 
 function dbus_send_upower {
 	dbus-send --system --print-reply \
-		--dest="org.freedesktop.UPower" /org/freedesktop/UPower \
+		--dest="org.freedesktop.UPower" \
+		/org/freedesktop/UPower \
 		org.freedesktop.UPower.$1
 }
 
 case $1 in 
 	stop) dbus_send_ck Stop ;;
 	restart) dbus_send_ck Restart ;;
-	suspend) dbus_send_upower Restart ;;
+	suspend) dbus_send_upower Suspend ;;
 	*) echo "Usage: $0 stop|restart|suspend" ;;
 esac
 
