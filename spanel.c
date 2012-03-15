@@ -8,12 +8,17 @@
 Display *display;
 Window window;
 GC gc;
+int x, y;
 int width, height;
 
+void clearStatus(){
+	XClearArea(display, window, x, y-10, width, 13, 0);
+}
+
 void cleanup(int sig){
-	XFreeGC(display, gc);
-	XClearArea(display, window, 0, height-25, width, height, 0);
+	clearStatus();
 	XFlush(display);
+	XFreeGC(display, gc);
 	XCloseDisplay(display);
 	exit(EXIT_SUCCESS);
 }
@@ -21,14 +26,11 @@ void cleanup(int sig){
 int main(int argc, char *argv[]){
 	char status[256];
 	XTextItem textItem;
+	int whiteColor, blackColor, color;
+	char opt;
 
 	textItem.delta = 0;
 	textItem.font = None;
-
-	if(argc < 2){
-		fprintf(stderr, "Usage: %s text\n", argv[0]);
-		exit(EXIT_SUCCESS);
-	}
 
 	display = XOpenDisplay(NULL);
 	
@@ -40,27 +42,57 @@ int main(int argc, char *argv[]){
 	width = DisplayWidth(display, DefaultScreen(display));
 	height = DisplayHeight(display, DefaultScreen(display));
 
-	int whiteColor = WhitePixel(display, DefaultScreen(display));
+	whiteColor = WhitePixel(display, DefaultScreen(display));
+	blackColor = BlackPixel(display, DefaultScreen(display));
+	color = whiteColor;
+
+	x = 0;
+	y = height - 3;
+
+	while((opt = getopt(argc, argv, "hlwb")) != -1){
+		switch(opt){
+		case 'h':
+			y = 12;
+			break;
+		case 'l':
+			y = height-3;
+			break;
+		case 'w':
+			color = whiteColor;
+			break;
+		case 'b':
+			color = blackColor;
+			break;
+		default:
+			fprintf(stderr, "Unrecognized option: %c", opt);
+			XCloseDisplay(display);
+			exit(EXIT_FAILURE);
+		}
+	}
+
+	if(optind >= argc){
+		fprintf(stderr, "Usage: %s [options] command\n", argv[0]);
+		XCloseDisplay(display);
+		exit(EXIT_FAILURE);
+	}
 
 	window = DefaultRootWindow(display);
 
 	signal(SIGINT, cleanup);
 	
 	gc = XCreateGC(display, window, 0, NULL);
+	
+	XSetForeground(display, gc, color);
 
 	for(;;){ 
-		XSetForeground(display, gc, whiteColor);
-
-		XClearArea(display, window, 0, height-25, width, height, 0);
-
-		FILE * pipe = popen(argv[1], "r");
+		clearStatus();
+		
+		FILE * pipe = popen(argv[optind], "r");
 		
 		if(fgets(status, 256, pipe)){
 			textItem.chars = status;
 			textItem.nchars = strlen(status)-1;
-			XDrawText(display, window, gc, 0, height-3, &textItem, 1);
-			/*XDrawImageString(display, window, gc, 
-					0, height-3, status, strlen(status)-1);*/
+			XDrawText(display, window, gc, x, y, &textItem, 1);
 		}
 
 		pclose(pipe);		
