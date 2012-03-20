@@ -1,13 +1,16 @@
-BATTERY=`acpi -b | cut -d " " -f 4`
+DATE=`date "+%F %I:%M %p"`
 
-if [ "`acpi -a | grep on-line`" ]; then
-	CHARGING='charging'
-else
-	CHARGING='discharging'
+echo -n "$DATE"
+
+if [ "`ls /sys/class/power_supply`" ]; then
+	BATTERY=`acpi -b | cut -d " " -f 4`
+	if [ "`acpi -a | grep on-line`" ]; then
+		BATTERY="$BATTERY, charging"
+	else
+		BATTERY="$BATTERY, discharging"
+	fi
+	echo -n " | Battery: $BATTERY"
 fi
-
-DATE=`date "+%F %r"`
-
 VOLLINE=`amixer get Master | grep "^\\s*Front Left"`
 
 if [ "`echo $VOLLINE | grep "\[on\]"`" ]; then
@@ -16,12 +19,19 @@ else
 	VOLUME='muted'
 fi
 
-if [ "`mpc status | grep "\[playing\]"`" ]; then
-	MPDSTAT=`mpc current`
-else
-	MPDSTAT='PAUSED'
+echo -n " | Volume: $VOLUME"
+
+if [ -x /usr/bin/cpufreq-info ]; then
+	CPUFREQ="`cpufreq-info -mf`"
+	echo -n " | CPU: $CPUFREQ"
 fi
 
-CPUFREQ="`cpufreq-info -mf`"
+if [ -x /usr/bin/mpc ]; then
+	if [ "`mpc status | grep "\[playing\]"`" ]; then
+		MPDSTAT=`mpc current`
+	else
+		MPDSTAT='PAUSED'
+	fi
+	echo " | $MPDSTAT"
+fi
 
-echo "Battery: $BATTERY $CHARGING | Volume: $VOLUME | $DATE | CPU: $CPUFREQ | $MPDSTAT"
