@@ -28,6 +28,7 @@ int main(int argc, char *argv[]){
 	XTextItem textItem;
 	int whiteColor, blackColor, color;
 	char opt;
+	int refresh = 1;
 
 	textItem.delta = 0;
 	textItem.font = None;
@@ -49,7 +50,7 @@ int main(int argc, char *argv[]){
 	x = 0;
 	y = height - 3;
 
-	while((opt = getopt(argc, argv, "hlwb")) != -1){
+	while((opt = getopt(argc, argv, "hlwbt:")) != -1){
 		switch(opt){
 		case 'h':
 			y = 12;
@@ -62,6 +63,9 @@ int main(int argc, char *argv[]){
 			break;
 		case 'b':
 			color = blackColor;
+			break;
+		case 't':
+			refresh = atoi(optarg);
 			break;
 		default:
 			fprintf(stderr, "Unrecognized option: %c", opt);
@@ -97,7 +101,7 @@ int main(int argc, char *argv[]){
 
 		pclose(pipe);		
 		XFlush(display);
-		sleep(1); 
+		sleep(refresh); 
 	}
 
 	cleanup(SIGINT);
