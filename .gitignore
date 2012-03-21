@@ -9,5 +9,4 @@ timestamp
 lrange
 echorandom
 spanel
-*test*
 *.swp
