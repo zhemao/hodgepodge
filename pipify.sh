@@ -1,6 +1,6 @@
 #!/bin/sh
 
-TMPFILE=/tmp/webpipe$$.txt
+TMPFILE=/tmp/pipify$$.txt
 
 cat > $TMPFILE
 
