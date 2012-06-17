@@ -9,4 +9,5 @@ timestamp
 lrange
 echorandom
 spanel
+xbanner
 *.swp
