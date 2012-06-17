@@ -26,7 +26,7 @@ void cleanup(int sig){
 int main(int argc, char *argv[]){
 	XTextItem textItem;
 	int whiteColor, blackColor, color;
-	int speed = 1;
+	int speed = 5;
 	char opt;
 
 	textItem.delta = 0;

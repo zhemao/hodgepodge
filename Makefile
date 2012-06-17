@@ -27,11 +27,8 @@ sanitize: sanitize.c
 inserttext: inserttext.c saferead.o
 	$(CC) $(CFLAGS) saferead.o inserttext.c -o inserttext
 
-todec: todec.c
-	$(CC) $(OPTS) todec.c -o todec
-	
 saferead.o: saferead.h saferead.c
-	$(CC) $(OPTS) -c saferead.c
+	$(CC) $(CFLAGS) -c saferead.c
 
 %: %.c
 
