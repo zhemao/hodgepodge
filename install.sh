@@ -9,16 +9,16 @@ echo "Installing executables"
 
 for file in $EXECUTABLES
 do
-	ln -fs $PWD/$file $HOME/bin/$file
+    cp $PWD/$file $HOME/bin/$file
 done
 
 echo "Installing shell and perl scripts"
 
-for file in *.sh *.pl
+for file in *.sh
 do
 	if [ $file != "install.sh" ]; then
 		shortname=`echo $file | sed -e "s/\..*//"`
-		ln -fs $PWD/$file $HOME/bin/$shortname
+        cp $PWD/$file $HOME/bin/$shortname
 	fi
 done
 
