@@ -9,5 +9,5 @@ timestamp
 lrange
 echorandom
 spanel
-xbanner
+xmarquee
 *.swp

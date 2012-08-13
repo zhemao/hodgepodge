@@ -1,5 +1,5 @@
 EXECUTABLES=minify sanitize inserttext todec fromdec lrange timestamp \
-			echorandom spanel xbanner
+			echorandom spanel xmarquee
 
 CC=gcc
 CFLAGS=-O2 -Wall
@@ -12,8 +12,8 @@ install: all
 spanel: spanel.c
 	$(CC) $(CFLAGS) spanel.c -lX11 -o spanel
 
-xbanner: xbanner.c
-	$(CC) $(CFLAGS) xbanner.c -lX11 -o xbanner
+xmarquee: xmarquee.c
+	$(CC) $(CFLAGS) xmarquee.c -lX11 -o xmarquee
 
 lrange: lrange.c saferead.o
 	$(CC) $(CFLAGS) saferead.o lrange.c -o lrange
