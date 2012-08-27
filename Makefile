@@ -1,5 +1,5 @@
 EXECUTABLES=minify sanitize inserttext todec fromdec lrange timestamp \
-			echorandom spanel xmarquee
+			echorandom spanel xmarquee randomdig
 
 CC=gcc
 CFLAGS=-O2 -Wall
