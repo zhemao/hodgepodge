@@ -5,6 +5,7 @@ MAKEPKG=`which makepkg`
 WGET=`which wget`
 PACMAN=`which pacman`
 TAR=`which tar`
+HEAD=`which head`
 UNTAR="$TAR xf"
 
 # The base AUR url
@@ -12,7 +13,8 @@ BASEURL='https://aur.archlinux.org/packages'
 
 # Download the tarball
 fetch () {
-	$WGET "$BASEURL/$1/$1.tar.gz"
+    PREFIX=`echo $1 | $HEAD -c 2`
+	$WGET "$BASEURL/$PREFIX/$1/$1.tar.gz"
 }
 
 # Unpack the tarball
