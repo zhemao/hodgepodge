@@ -2,7 +2,7 @@
 
 # Where are our executables? Change these only if they are not on the path
 MAKEPKG=`which makepkg`
-WGET=`which wget`
+CURL=`which curl`
 PACMAN=`which pacman`
 TAR=`which tar`
 HEAD=`which head`
@@ -14,7 +14,7 @@ BASEURL='https://aur.archlinux.org/packages'
 # Download the tarball
 fetch () {
     PREFIX=`echo $1 | $HEAD -c 2`
-	$WGET "$BASEURL/$PREFIX/$1/$1.tar.gz"
+	$CURL "$BASEURL/$PREFIX/$1/$1.tar.gz" -o $1.tar.gz
 }
 
 # Unpack the tarball
