@@ -67,7 +67,7 @@ void usage(char * name){
 
 int main(int argc, char *argv[]){
 	char str[1024];
-	int num;
+	int num = 0;
 	int format = HEX;
 	char opt;
 	
