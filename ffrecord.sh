@@ -1,6 +1,6 @@
 #!/bin/sh
 
-AUDIO_BACKEND=pulse
+AUDIO_BACKEND=default
 VIDEO_DEVICE=/dev/video0
 
 AUDIO_CODEC=flac
