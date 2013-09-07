@@ -98,6 +98,7 @@ int main(int argc, char *argv[]){
 		break;
 	case BIN: num = btoi(str);
 		break;
+	default: num = -1;
 	}
 	
 	if(num == -1){
