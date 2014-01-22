@@ -32,7 +32,3 @@ do
 	cat $file >> $HOME/bin/$shortname
 	chmod +x $HOME/bin/$shortname
 done
-
-if [ ! -d ~/.fuse ]; then
-	mkdir ~/.fuse
-fi
