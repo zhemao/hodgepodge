@@ -12,7 +12,7 @@ do
     cp $PWD/$file $HOME/bin/$file
 done
 
-echo "Installing shell and perl scripts"
+echo "Installing shell scripts"
 
 for file in *.sh
 do
