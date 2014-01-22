@@ -6,8 +6,7 @@ if [ -z $1 ]; then
 	echo "<body>"
 	cat
 else
-	echo $1
-	echo "<title>$1</title><body>"
+	echo "<head><title>$1</title></head><body>"
 	cat $1
 fi
 
