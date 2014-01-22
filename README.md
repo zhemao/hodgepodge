@@ -8,24 +8,14 @@ create symlinks to the binaries.
 
 The contents of this repository are:
 
-## fixpip.py
-
-This is a workaround to a strange bug in pip, the python package manager, in
-which the installation info is stored in a folder called 
-(packagename)-(version).egg-info, but the uninstaller expects the folder to be
-named (packagename)-(version)-py(pythonversion).egg-info. This script simply
-changes all of the names in the installation directory to the correct names.
-I am unsure whether the bug is specific to Ubuntu or whether it affects all 
-operating systems. Hopefully it is fixed soon.
-
-## eliminate
+## minify
 
 A simple C program that reads in text, eliminates the whitespace, and then
-writes it out. 
-The usage is `./eliminate [inputfilename] [outputfilename]`.
+writes it out.
+The usage is `./minify [inputfilename] [outputfilename]`.
 If inputfilename is not given, the program will read from standard input.
 If outputfilename is not given, the program will write to standard output.
-`make eliminate` to compile
+`make minify` to compile
 
 ## inserttext
 
@@ -45,16 +35,6 @@ argument.
 A C program that removes non-ascii characters and non-printing characters 
 from a text file. Command-line usage is the same as for eliminate. 
 `make sanitize` to compile
-
-## fah.sh
-
-A bash initscript for the Linux release of the Folding@Home program. For legal
-reasons, I do not redistribute Folding@Home, you must download it yourself.
-There are some variables that must be configured in the script. I have left
-some comments to tell you how. The commands available in fah are install, 
-start, stop, and restart. Install allows you to configure FAH with certain
-options. You will want to choose "no" for asking you before downloading work
-from the server. Otherwise, FAH won't work in the background. 
 
 ## aur.sh
 
@@ -86,20 +66,6 @@ Use the ghostscript program to concatenate several pdf files together.
 Usage: `pdfcat [file1 file2 file3 ...]`. PDF file is printed to standard 
 output.
 
-## mongomigrate.py
-
-A quick and dirty python script to migrate records from one mongodb collection
-to another. Usage is `mongomigrate.py [filename]`, where filename is the name
-of a configuration json file used by the script. If filename is not provided,
-it defaults to "migration.json". The json file should include a dictionary with
-two keys: "from" and "to". The values of these should be dictionaries with 
-required keys "host", "port", "database", and "collection". There are also
-optional keys "username" and "password" if the mongodb instance is running in
-protected mode. The "from" dictionary also has an optional key "query" which
-is used to select the records to be migrated. If "query" is not provided, all
-records in the "from" collection are used. The "migration.json" file in this
-repository is a good example.
-
 ## webpipe.sh
 
 A shell script that takes HTML from standard input and displays it in your 
@@ -122,26 +88,6 @@ will read from standard input.
 Compares the size of two files using `stat` and `bc`. Usage is 
 `cmpsize file1 file2`.
 
-## pullall.sh
-
-Finds all git and mercurial repositories in a directory and does 
-`git pull origin master` or `hg pull -u` on each of them. 
-Usage is `pullall.sh [directory]`, where directory is the directory in which 
-to start searching. It defaults to the current working directory.
-
-## mount\_server.pl
-
-Convenient wrapper for `curlftpfs` and `sshfs`. Takes an argument in the form 
-of a url *protocol*://*username*@*servername*. Valid protocols are `ftp` and 
-`ssh`. If ssh, the script will mount the home directory of the user. The 
-mountpoint will be ~/.fuse/*servername*.
-
-## unmount\_server.sh
-
-Companion to mount\_server.pl. Takes a single argument, which is the servername.
-The corresponding directory (~/.fuse/*servername*) will be unmounted and 
-removed.
-
 ## lrange
 
 Usage: lrange start end [infile] [outfile]
@@ -151,29 +97,24 @@ Reads in the a file and outputs a range of its lines to another file. The
 and are inclusive (i.e. lrange 1 2 will output lines 1 and 2). If infile or
 outfile are not given, standard input and standard output will be used.
 
-## music\_shuffle.sh
+## echorandom
 
-Usage: music\_shuffle.sh [directory]
+Usage: echorandom arg1 arg2 arg3
 
-Finds all the music files in a directory and plays them at random using 
-mplayer. If the directory is not given on the command line, it will take it 
-from the `MUSIC_FOLDER` environmental variable. If this variable is not 
-defined, it will default to using $HOME/Music. This script is also affected 
-by the `MUSIC_PLAYER` environmental variable. If this variable is defined, 
-it will be used in place of mplayer.
+Randomly choose one of the arguments and print it to standard output.
+Useful if you want to pick a random string in a shell script.
 
-## sysstatus.sh
+## autosync.sh
 
-Prints out a summary of some things on your system, including battery, speaker
-volume, datetime, cpu frequency, and MPD status.
+Usage: autosync.sh localdir remotedir
 
-## spanel
+Keep a remote directory in sync with a local directory using rsync and inotify.
+This script runs rsync when inotify detects a change in your local directory.
 
-Usage: spanel command
+## timestamp
 
-Draws a simple status panel at the bottom of your X screen. The contents of the
-panel are taken from the first line of standard output after running command.
-The status line is refreshed every second.
+Prepends timestamps to each line read from standard input and outputs to
+standard output. Useful for logging.
 
 ## License
 

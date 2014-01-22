@@ -1,5 +1,10 @@
 #!/bin/sh
 
+if [ -z $2 ]; then
+    echo "Usage: $0 localdir remotedir"
+    exit 1
+fi
+
 LOCALDIR=$1
 REMOTEDIR=$2
 
