@@ -1,7 +1,7 @@
 #!/bin/sh
 
 EXECUTABLES="minify sanitize inserttext todec fromdec lrange timestamp \
-	echorandom spanel xmarquee randomdig"
+	echorandom xmarquee randomdig"
 
 PYTHON=/usr/bin/python2
 
