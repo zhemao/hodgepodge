@@ -1,5 +1,5 @@
 EXECUTABLES=minify sanitize inserttext todec fromdec lrange timestamp \
-			echorandom spanel xmarquee randomdig
+	echorandom xmarquee randomdig
 
 CC=gcc
 CFLAGS=-O2 -Wall
@@ -8,9 +8,6 @@ all: $(EXECUTABLES)
 
 install: all
 	./install.sh
-
-spanel: spanel.c
-	$(CC) $(CFLAGS) spanel.c -lX11 -o spanel
 
 xmarquee: xmarquee.c
 	$(CC) $(CFLAGS) xmarquee.c -lX11 -o xmarquee
@@ -33,5 +30,4 @@ saferead.o: saferead.h saferead.c
 %: %.c
 
 clean:
-	rm -f $(EXECUTABLES) *.o 
-	
+	rm -f $(EXECUTABLES) *.o

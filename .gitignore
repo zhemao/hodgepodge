@@ -8,7 +8,6 @@ fromdec
 timestamp
 lrange
 echorandom
-spanel
 xmarquee
 randomdig
 *.swp
