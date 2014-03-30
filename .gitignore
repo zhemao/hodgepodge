@@ -10,4 +10,5 @@ lrange
 echorandom
 xmarquee
 randomdig
+servehttp
 *.swp

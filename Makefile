@@ -1,5 +1,5 @@
 EXECUTABLES=minify sanitize inserttext todec fromdec lrange timestamp \
-	echorandom xmarquee randomdig
+	echorandom xmarquee randomdig servehttp
 
 CC=gcc
 CFLAGS=-O2 -Wall
@@ -26,6 +26,9 @@ inserttext: inserttext.c saferead.o
 
 saferead.o: saferead.h saferead.c
 	$(CC) $(CFLAGS) -c saferead.c
+
+servehttp: servehttp.go
+	go build $<
 
 %: %.c
 
