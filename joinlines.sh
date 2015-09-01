@@ -14,3 +14,7 @@ do
         curline="$curline $line"
     fi
 done
+
+if ! [ -z "$curline" ]; then
+    echo "$curline"
+fi
